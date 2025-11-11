@@ -6,7 +6,7 @@
 .tryout-heading {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #1b3c73;
+  color: #4A4946;
   margin-bottom: 32px;
 }
 
@@ -71,7 +71,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #1b3c73;
+  background-color: #4A4946;
   color: white;
   border: none;
   border-radius: 8px;
