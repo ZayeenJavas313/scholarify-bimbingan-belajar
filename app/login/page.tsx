@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
+// Login page component
 export default function LoginPage() {
   const router = useRouter();
   const sp = useSearchParams();
