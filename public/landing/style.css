@@ -21,26 +21,135 @@ body{
   background: var(--bg);
   line-height:1.6;
 }
-
-/* ===== Navbar ===== */
-.nav{
-  position: sticky; top:0; z-index:30;
-  background: rgba(255,255,255,.85);
+/* Navbar Styles */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
-  border-bottom:1px solid #e6e9ef;
-}
-.nav-inner{
-  height:64px; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:16px;
-}
-.nav-brand{ display:flex; align-items:center; gap:10px; font-weight:700; color:#111827; text-decoration:none; font-size:18px }
-.nav-brand img{ width:26px; height:26px }
-.nav-links{ display:flex; gap:28px }
-.nav-links a{ color:#344054; text-decoration:none; font-weight:400 }
-.nav-links a:hover{ color:#111827 }
-.btn-ghost-sm{
-  text-decoration:none; color:#111827; background:#ffff; border:2px solid #e6e9ef; padding:6px 14px; border-radius:16px; font-weight:500
+  border-bottom: 1px solid #e6e9ef;
 }
 
+.nav-inner {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px;
+}
+
+/* Logo (Scholarify) positioning */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: #111827;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-brand img {
+  width: 26px;
+  height: 26px;
+}
+
+/* Center the navigation links (Home, About, Program) */
+.nav-links {
+  display: flex;
+  gap: 28px; /* Space between links */
+  margin-left: auto; /* Pushes the nav links to the center */
+  margin-right: auto; /* Ensures equal spacing on both sides */
+}
+
+.nav-links a {
+  color: #344054;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #111827;
+}
+
+/* Login Button */
+.btn-ghost-sm {
+  text-decoration: none;
+  color: #111827;
+  background: #fff;
+  border: 2px solid #e6e9ef;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-ghost-sm:hover {
+  background-color: #111827;
+  color: #fff;
+}
+
+/* Mobile Specific Styles */
+@media (max-width: 768px) {
+  .nav-inner {
+    flex-direction: row;
+    align-items: right;
+    padding: 10px;
+    font-size: 12px; /* Smaller font size */
+  }
+  
+  .nav-brand {
+    flex-direction: row;
+    padding: 1px;
+    gap: 4px;    
+    font-size: 14px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1px; /* Reduced gap for mobile */
+    margin-left: 8px;
+    justify-content: center; /* Ensures center alignment of menu */
+    width: 100%;
+  }
+
+  .btn-ghost-sm {
+    flex-direction: row;
+    border: 3px solid #e6e9ef;
+    border-radius: 8px;   
+    padding: 1px 6px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 8px;
+  }
+
+  /* Reduce font size and padding on mobile */
+  .nav-links a {
+    font-size: 14px; /* Smaller font size */
+    padding: 8px 8px; /* Adjust padding */
+  }
+
+  .nav-brand img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-links a:hover {
+  color: #007bff;  /* Ganti dengan warna yang diinginkan */
+  text-decoration: underline;  /* Menambahkan garis bawah saat hover */
+  }
+
+/* Hover effect pada tombol Login */
+.btn-ghost-sm:hover {
+  background-color: #007bff;  /* Ganti dengan warna yang diinginkan */
+  color: white;
+  }
+
+}
 
 
 
@@ -93,49 +202,126 @@ body{
   margin: 0;
 }
 
-/* ===== Metrik: satu kotak transparan dengan tiga item ===== */
-.hero-stats{
-  margin-top: 88px;
-  /* tarik sedikit ke bawah agar “mengambang” di tengah area hero */
-  transform: translateY(16px);
-}
-.stats-inner{
-  display:grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr;  /* 3 item + 2 divider */
-  align-items: center;
-  gap: 0;
-  background: rgba(255,255,255,.82);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(226,232,240,.7);
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 10px 28px rgba(2,6,23,.12);
-  width: min(980px, 90%);
+/* Metrik: satu kotak transparan dengan tiga item */
+.hero-stats {
+  margin-top: 50px; /* Memberikan jarak ke bawah */
+  width: 100%;
+  padding: 20px 0; /* Memberikan padding agar area statistik lebih terbuka */
 }
 
-/* setiap item */
-.stat-item{
-  display:flex; align-items:center; gap:12px;
-  padding: 6px 12px;
+.stats-inner {
+  display: flex;
+  justify-content: center;  /* Memastikan kotak berada di tengah */
+  align-items: center;
+  gap: 30px; /* Menjaga jarak antar elemen */
+  background: rgba(255, 255, 255, 0.82);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 232, 240, 0.7);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 28px rgba(2, 6, 23, 0.12);
+  width: 100%;
+  box-sizing: border-box; 
+  margin: 0 auto; /* Memastikan kotak berada di tengah */
 }
-.stat-ico{
-  width:42px; height:42px; border-radius:8px;
-  display:grid; place-items:center;
-  background: #eef2ff;               /* lembut */
-  color:#FFFFFF; font-size:24px;
-  box-shadow: inset 0 0 0 1px rgba(99,102,241,.15);
+
+/* Setiap item statistik */
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px; /* Menambah padding untuk lebih rapi */
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
 }
-.stat-item b{
-  display:block; color:#0f172a; font-size:20px; line-height:1.1;
+
+/* Ikon dalam stats */
+.stat-ico {
+  width: 50px; /* Ukuran ikon */
+  height: 50px; /* Ukuran ikon */
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: #eef2ff; /* Latar belakang lembut */
+  color: #FFFFFF;
+  font-size: 24px; /* Ukuran font jika ada teks */
+  box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.15);
 }
-.stat-item small{
-  display:block; color:#334155; font-size:12px; margin-top:2px;
+
+/* Gambar di dalam ikon */
+.stat-ico img {
+  width: 30px; /* Ukuran gambar ikon */
+  height: 30px; /* Ukuran gambar ikon */
+  object-fit: contain; /* Menjaga gambar tetap proporsional */
 }
-.stat-divider{
-  width:1px; height:36px; background: rgba(15,23,42,.14);
-  border-radius:1px;
+
+/* Teks */
+.stat-item b {
+  display: block;
+  color: #0f172a;
+  font-size: 20px;
+  line-height: 1.1;
 }
+
+.stat-item small {
+  display: block;
+  color: #334155;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* Divider (garis pemisah) */
+.stat-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(15, 23, 42, 0.14);
+  border-radius: 1px;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .hero-stats {
+
+    width: 100%;
+    padding: 60px 0;
+  }
+  
+  .stats-inner {
+    flex-direction: row; 
+    margin bottom: 80px;
+    width: 100%;
+    gap: 16px;
+    padding: 16px; /* Memastikan ukuran kotak mengikuti layar */
+  }
+
+  .stat-item {
+    padding: 3px 0px;
+    width: 100;
+  }
+  
+  .stat-ico {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+
+  .stat-ico img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .stat-item b {
+    font-size: 14px; /* Menurunkan ukuran font pada perangkat kecil */
+  }
+
+  .stat-item small {
+    font-size: 10px; /* Menurunkan ukuran font pada perangkat kecil */
+  }
+}
+
 
 /* ===== CTA di bawah hero ===== */
 .hero-cta-under{
@@ -158,11 +344,11 @@ body{
 
 @media (max-width: 768px) {
   .button-container {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
   button {
-    width: 80%;
+    width: 30%;
   }
 }
 
